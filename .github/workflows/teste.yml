@@ -27,4 +27,4 @@ jobs:
             prod*   
       
       - name: Check if env variable is set after fetching secrets
-        run: echo $prod-test
+        run: if [ -z ${prod-test+x} ]; then echo "prod-test is unset"; else echo "prod-test is set to '$prod-test'"; fi
