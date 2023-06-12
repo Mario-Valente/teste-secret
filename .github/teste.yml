@@ -1,0 +1,14 @@
+
+
+
+
+
+
+- name: configure credentials
+  uses: aws
+
+- name: Get Secret Names by Prefix
+  uses: aws-actions/aws-secretsmanager-get-secrets@v1
+  with:
+    secret-ids: |
+      beta*    # Retrieves all secrets that start with 'beta'
