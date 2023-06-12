@@ -24,7 +24,7 @@ jobs:
         uses: aws-actions/aws-secretsmanager-get-secrets@v1
         with:
         secret-ids: |
-          prod-test*    # Retrieves all secrets that start with 'prod-test'
+          prod-test*   # Retrieves all secrets that start with 'prod-test'
       
       - name: Check if env variable is set after fetching secrets
         run: set | grep prod 
