@@ -27,4 +27,4 @@ jobs:
             prod*   
       
       - name: Check if env variable is set after fetching secrets
-        run: set | grep prod 
+        run: echo $prod-test
