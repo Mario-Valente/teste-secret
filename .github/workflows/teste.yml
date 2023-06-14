@@ -26,5 +26,13 @@ jobs:
           secret-ids: |
             prod*   
       
+      - name: Atribuir valores aos segredos às variáveis de ambiente
+        run: |
+          echo "PROD_TESTE=${{ steps.secrets.outputs.prod-test }}" >> $GITHUB_ENV
+         
+     
       - name: Check if env variable is set after fetching secrets
-        run: if [ -z ${prod-test+x} ]; then echo "prod-test is unset"; else echo "prod-test is set to '$prod-test'"; fi
+        run: if [ -z ${PROD_TESTE+x} ]; then echo "PROD_TESTE is unset"; else echo "PROD_TESTE is set to '$PROD_TESTE'"; fi
+
+      - name: test
+        run: echo 
